@@ -1,9 +1,13 @@
 package university.management.repositories;
 
-/**
- * @author Michael Pogrebinsky - www.topdeveloperacademy.com
- * A JPA Repository to perform operations on the LearnerProfiles table
- */
-public interface LearnerProfilesRepository {
+import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import university.management.model.LearnerProfile;
+
+@Repository
+public interface LearnerProfilesRepository extends JpaRepository<LearnerProfile, Long>{
+    List<LearnerProfile> findAllByIsGraduatedIsFalseOrderByGpaDesc();
 }

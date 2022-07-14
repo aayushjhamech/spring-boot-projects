@@ -3,21 +3,15 @@ package university.management.controllers;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import university.management.model.Program;
-import university.management.model.Student;
 import university.management.services.ProgramService;
 import university.management.services.StudentsService;
 
 import java.time.LocalDate;
 import java.util.Locale;
 
-/**
- * @author Michael Pogrebinsky - www.topdeveloperacademy.com
- * Controller that registration of a new student to the University
- * DO NOT MODIFY THIS CLASS
- */
+
 @Controller
 public class RegistrationController {
     private final StudentsService studentsService;

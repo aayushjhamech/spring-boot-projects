@@ -1,8 +1,15 @@
 package university.management.repositories;
 
-/**
- * @author Michael Pogrebinsky - www.topdeveloperacademy.com
- * A JPA Repository to perform operations on the Students table
- */
-public interface StudentsRepository {
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import university.management.model.Student;
+
+
+@Repository
+public interface StudentsRepository extends JpaRepository<Student, Long>{
+
+    Optional<Student> findByEmail(String email);
 }
